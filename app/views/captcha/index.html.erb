@@ -1,0 +1,7 @@
+<h1>Captcha</h1>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+<%= form_tag('/captcha')  do %>
+    <%= show_simple_captcha code_type: "numeric" %>
+    <div><%= submit_tag 'Ok' %></div>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>Watermark</h1>
+<%= image_tag 'preview.jpg', height: '300' %>
+<p>Водяной знак из файла</p>
+<%= image_tag 'watermark.png', width: '200' %>
+<br>
+<br>
+<%= form_tag "#{@photo.id}/edit" do %>
+    <%= label_tag 'text', 'Текст метки' %>
+    <%= text_field_tag 'text', 'Watermark'%>
+    <br>
+    <%= label_tag 'text_opacity', 'Прозрачность' %>
+    <%= text_field_tag 'text_opacity', '0.25'%>
+    <br>
+    <%= label_tag 'text_size', 'Размер шрифта' %>
+    <%= text_field_tag 'text_size', '48'%>
+    <br>
+    <br>
+    <%= radio_button_tag 'position','left' %>Слева<br>
+    <%= radio_button_tag 'position','right' %>Справа<br>
+    <%= radio_button_tag 'position','top' %>Сверху<br>
+    <%= radio_button_tag 'position','bottom', true %>Снизу<br>
+    <%= radio_button_tag 'position','diagonal' %>По диагонали<br>
+    <br>
+    <%= radio_button_tag 'type','text',true%>Текст<%= radio_button_tag 'type','file'%>Файл
+    <br>
+    <br>
+    <%= submit_tag 'Применить' %>
+<% end %>
