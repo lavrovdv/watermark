@@ -20,7 +20,7 @@ module Paperclip
       @basename         = File.basename(@file.path, @current_format)
     end
 
-    # TODO: extend watermark
+    # TODO: extend watermark_tool
 
     # Returns true if the +target_geometry+ is meant to crop.
     def crop?
@@ -32,7 +32,7 @@ module Paperclip
       not @convert_options.blank?
     end
 
-    # Performs the conversion of the +file+ into a watermark. Returns the Tempfile
+    # Performs the conversion of the +file+ into a watermark_tool. Returns the Tempfile
     # that contains the new image.
     def make
       dst = Tempfile.new([@basename, @format].compact.join("."))
@@ -49,7 +49,7 @@ module Paperclip
       begin
         success = Paperclip.run(command, params)
       rescue PaperclipCommandLineError
-        raise PaperclipError, "There was an error processing the watermark for #{@basename}" if @whiny
+        raise PaperclipError, "There was an error processing the watermark_tool for #{@basename}" if @whiny
       end
 
       dst

@@ -6,7 +6,7 @@
 <br>
 <%= form_tag "#{@photo.id}/edit" do %>
     <%= label_tag 'text', 'Текст метки' %>
-    <%= text_field_tag 'text', 'Watermark'%>
+    <%= text_area_tag 'text', 'Watermark'%>
     <br>
     <%= label_tag 'text_opacity', 'Прозрачность' %>
     <%= text_field_tag 'text_opacity', '0.25'%>
